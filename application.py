@@ -39,7 +39,8 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///finance.db'
 # db = SQLAlchemy(app)
-db = SQL('sqlite:///finance.db')
+# db = SQL('sqlite:///finance.db')
+db = SQL(os.getenv("DATABASE_URL"))
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
